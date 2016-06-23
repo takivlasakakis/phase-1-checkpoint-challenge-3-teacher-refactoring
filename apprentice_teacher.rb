@@ -1,6 +1,8 @@
-class ApprenticeTeacher
-  attr_reader :age, :salary, :phase, :target_raise
-  attr_accessor :name
+require_relative 'teacher'
+
+class ApprenticeTeacher < Teacher
+  # attr_reader :age, :salary, :phase, :target_raise
+  # attr_accessor :name
 
   def initialize(options={})
     @age = options.fetch(:age, 0)
@@ -9,16 +11,16 @@ class ApprenticeTeacher
     @phase = 3
   end
 
-  def offer_high_five
-    "High five!"
-  end
+  # def offer_high_five
+  #   "High five!"
+  # end
 
-  def set_phase(num)
-    @phase = num
-    "Cool, I've always wanted to teach phase #{num}!"
-  end
+  # def set_phase(num)
+  #   @phase = num
+  #   "Cool, I've always wanted to teach phase #{num}!"
+  # end
 
-  def teach_stuff
+  def self.teach_stuff
     response = ""
     response += "Listen, class, this is how everything works. "
     response += "*drops crazy knowledge bomb* "
@@ -31,9 +33,9 @@ class ApprenticeTeacher
     @salary = new_salary
   end
 
-  def receive_raise(raise)
-    @salary += raise
-  end
+  # def receive_raise(raise)
+  #   @salary += raise
+  # end
 
   def set_performance_rating(rating)
     response = ""

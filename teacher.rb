@@ -2,7 +2,7 @@ class Teacher
   attr_reader :age, :salary, :phase, :performance_rating, :target_raise
   attr_accessor :name
 
-  def initialize(options={})
+  def self.initialize(options={})
     @phase = 3
     @age = options.fetch(:age, 0)
     @name = options.fetch(:name, "")
@@ -18,7 +18,7 @@ class Teacher
     "Cool, I've always wanted to teach phase #{num}!"
   end
 
-  def teach_stuff
+  def self.teach_stuff
     response = ""
     response += "Listen, class, this is how everything works, fo SHO! "
     response += "*drops flat-out insane knowledge bomb* "
@@ -26,7 +26,7 @@ class Teacher
     response
   end
 
-  def salary=(new_salary)
+  def self.salary=(new_salary)
     puts "This better be good!"
     @salary = new_salary
   end
@@ -35,7 +35,7 @@ class Teacher
     @salary += raise
   end
 
-  def set_performance_rating(rating)
+  def self.set_performance_rating(rating)
     response = ""
     if rating > 90
       receive_raise(@target_raise)
